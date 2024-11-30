@@ -214,10 +214,6 @@ class FooterPage extends StatelessWidget {
 
         ],
       ),
-
-
-
-
     );
   }
 }

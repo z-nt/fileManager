@@ -31,12 +31,9 @@ class Home extends StatelessWidget {
                     ),
                   ),
                   child:const StructurePage(
-                    navbar:HeaderPage(
-                      text: 'Good morning kian',
-                      
-                      ), 
+                      navbar:HeaderPage(text: 'Good morning kian',), 
                       footer: FooterPage(addressHome:'home' , addressFiles: 'files', addressCloud: 'cloud'),
-                      body: body
+                      body: body,
                       ),
           ),
         ),
