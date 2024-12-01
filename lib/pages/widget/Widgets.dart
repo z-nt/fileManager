@@ -2,13 +2,10 @@
 import 'package:flutter/material.dart';
 import 'package:filemanger/pages/style/style.dart';
 import 'package:go_router/go_router.dart';
-
-
+import 'package:percent_indicator/percent_indicator.dart';
 
 class CustomContainer extends StatelessWidget {
-
   const CustomContainer({super.key});
-
   @override
   Widget build(BuildContext context) {
       return Container(
@@ -44,14 +41,11 @@ class CustomContainer extends StatelessWidget {
       );
   }
 }
-
 ///bottom for the home entery
-
 class HomeButton extends StatelessWidget {
   final String name;
   final String address;
   const HomeButton ({super.key  , required this.name  , required this.address });
-
   @override
   Widget build(BuildContext context) {
       return Container(
@@ -62,7 +56,6 @@ class HomeButton extends StatelessWidget {
               children: [
                 Padding(
                 padding: const EdgeInsets.all(8.0),
-              
                 child: OutlinedButton(
                 style: buttonstyleHome,
                 onPressed:(){
@@ -73,22 +66,19 @@ class HomeButton extends StatelessWidget {
             ),
           ], 
         )
-            ),
-      );
+      ),
+    );
   }
 }
 //// structure of pages
-
 class StructurePage extends StatefulWidget {
   final Widget navbar;
   final Widget footer;
   final Widget body;
   const StructurePage ({super.key , required this.navbar , required this.footer , required this.body  });
-
   @override
   State<StructurePage> createState() => _StructurePageState();
 }
-
 class _StructurePageState extends State<StructurePage> {
   @override
   Widget build(  BuildContext context) {
@@ -122,13 +112,9 @@ class _StructurePageState extends State<StructurePage> {
       );
   }
 }
-
-
 ///Header of pages 
-
 class HeaderPage extends  StatelessWidget {
   final String text;
-  
   const HeaderPage ({super.key , required this.text });
   @override
   Widget build(BuildContext context) {
@@ -136,7 +122,6 @@ class HeaderPage extends  StatelessWidget {
       width: 311,
       height: 72,
       margin:const EdgeInsets.all(12),
-     
     child:Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children:<Widget>[
@@ -146,8 +131,7 @@ class HeaderPage extends  StatelessWidget {
               height: 72,
               child: Text(text , style: headerpageStyle , textAlign: TextAlign.left,),
             ),
-          
-          
+  
           const SizedBox(
             child:IconButton(
              onPressed: null,
@@ -159,59 +143,114 @@ class HeaderPage extends  StatelessWidget {
     );
   }
 }
+///percent indicator 
+class PercentIndicator extends StatelessWidget {
+  const PercentIndicator ({super.key});
+  @override
+  Widget build(BuildContext context) {
+      return  Container(
+          child: CircularPercentIndicator(
+            radius: 130.0,
+            lineWidth: 20.0,
+            percent: 0.8,
+            animation: true,
+            center:const  Text(
+              "70.0%\nused",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold
+              ),
+            ),
+            circularStrokeCap: CircularStrokeCap.round,
+            progressColor:Color.fromARGB(213, 76, 2, 250),
+          ),
+      );
+  }
+}
+///body of pages 
+class BodyPage extends StatelessWidget {
+const BodyPage ({super.key});
+@override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 375,
+      height: 612,
+      decoration: BoxDecoration(
+        border: Border.all(
+          width: 1,
+          color: Colors.red,
+        )
+      ),
+      child:const Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children:<Widget>[
+
+              SizedBox(
+                width: 58,
+                height:48 ,
+                child: Text(
+                "289 GB\nFree",
+                ),
+              ),
+
+              PercentIndicator(),
+              
+              SizedBox(
+                width: 58,
+                height:48 ,
+                child: Text(
+                  "785 GB\nused",
+                  ),
+              ),
+        ],
+      ),
+    );
+  }
+}
 
 
 /// footer of pages 
-
 class FooterPage extends StatelessWidget {
   final String addressHome; 
   final String addressFiles; 
   final String addressCloud; 
   const FooterPage({super.key , required this.addressHome , required this.addressFiles , required this.addressCloud  });
-
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 216,
       height: 32,
       margin:const EdgeInsets.all(24),
-
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children:<Widget>[
-
           SizedBox(
             child: IconButton(
                onPressed: (){
                 context.goNamed(addressHome);
                },
-            
               icon:const Icon(Icons.home),
-              color:  Color.fromARGB(213, 76, 2, 250),
+              color:Color.fromARGB(213, 76, 2, 250),
             )
           ),
-
            SizedBox(
             child: IconButton(
                onPressed: (){
                 context.goNamed(addressFiles);
                },
               icon:const Icon(Icons.folder),
-               color:  Color.fromARGB(213, 76, 2, 250),
+               color:Color.fromARGB(213, 76, 2, 250),
             )
           ),
-
-
            SizedBox(
             child: IconButton(
              onPressed: (){
                 context.goNamed(addressCloud);
                },
              icon:const Icon(Icons.cloud),
-              color:  Color.fromARGB(213, 76, 2, 250),
+              color:Color.fromARGB(213, 76, 2, 250),
               ),
           ),
-
         ],
       ),
     );
