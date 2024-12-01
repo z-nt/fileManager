@@ -1,8 +1,8 @@
 
+import 'package:filemanger/pages/home/homewidgets/homewidgets.dart';
 import 'package:flutter/material.dart';
 import 'package:filemanger/pages/style/style.dart';
 import 'package:go_router/go_router.dart';
-import 'package:percent_indicator/percent_indicator.dart';
 
 class CustomContainer extends StatelessWidget {
   const CustomContainer({super.key});
@@ -143,30 +143,7 @@ class HeaderPage extends  StatelessWidget {
     );
   }
 }
-///percent indicator 
-class PercentIndicator extends StatelessWidget {
-  const PercentIndicator ({super.key});
-  @override
-  Widget build(BuildContext context) {
-      return  Container(
-          child: CircularPercentIndicator(
-            radius: 130.0,
-            lineWidth: 20.0,
-            percent: 0.8,
-            animation: true,
-            center:const  Text(
-              "70.0%\nused",
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold
-              ),
-            ),
-            circularStrokeCap: CircularStrokeCap.round,
-            progressColor:Color.fromARGB(213, 76, 2, 250),
-          ),
-      );
-  }
-}
+
 ///body of pages 
 class BodyPage extends StatelessWidget {
 const BodyPage ({super.key});
@@ -174,7 +151,6 @@ const BodyPage ({super.key});
   Widget build(BuildContext context) {
     return Container(
       width: 375,
-      height: 612,
       decoration: BoxDecoration(
         border: Border.all(
           width: 1,
@@ -182,7 +158,6 @@ const BodyPage ({super.key});
         )
       ),
       child:const Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children:<Widget>[
 
               SizedBox(
@@ -202,6 +177,8 @@ const BodyPage ({super.key});
                   "785 GB\nused",
                   ),
               ),
+
+              Category(),
         ],
       ),
     );
