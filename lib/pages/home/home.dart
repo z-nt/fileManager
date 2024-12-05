@@ -22,7 +22,7 @@ class Home extends StatelessWidget {
                   width: 375,
                   height: 812,
                   
-                  alignment: Alignment.center,
+                
                   decoration:const BoxDecoration(
                   color: Color.fromARGB(213, 76, 2, 250),
                    
@@ -32,8 +32,14 @@ class Home extends StatelessWidget {
                   ),
                   child:const StructurePage(
                       navbar:HeaderPage(text: 'Good morning kian',), 
-                      footer: FooterPage(addressHome:'home' , addressFiles: 'files', addressCloud: 'cloud'),
+                      
                       body: BodyPage(),
+                      
+
+
+
+
+                      footer: FooterPage(addressHome:'home' , addressFiles: 'files', addressCloud: 'cloud'),
                       ),
           ),
         ),

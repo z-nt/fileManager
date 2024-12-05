@@ -1,4 +1,3 @@
-import 'package:filemanger/pages/widget/Widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
@@ -31,63 +30,156 @@ class PercentIndicator extends StatelessWidget {
 
 class Category extends StatelessWidget  {
   const Category ({super.key});
-
+  final String title = "Category";
   @override
   Widget build(BuildContext context) {
-    const title = "Category";
-        return Scaffold(
-          appBar: AppBar(
-            title:const Text(title),
-          ),
-          body: Container(
-          
-          width: 375,
-
+        return Container(
+          width: 311,
+          height: 132,
+      
           child: ListView(
-            scrollDirection: Axis.horizontal,
-            children:<Widget>[
-              Container(
-                width: 72, 
-                height: 94,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    width: 1,
-                    color: Colors.red
-                  )
-                ),
-                child: Column(
+            children:const <Widget>[
+                  Padding(
+                    padding: EdgeInsets.only(bottom: 12),
+                    child:  Text(
+                          'Category',
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.black,
+                            fontWeight:FontWeight.normal 
+                          ),
+                    ),
+                  ),
+              SizedBox(
+                height: 82,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children:<Widget>[
-                      Container(
-                        width: 72,
-                        height: 64,
-                        child: IconButton(
-                         iconSize: 36,
-                          color: Colors.green,
-                         onPressed: (){},
-                         icon:const Icon(Icons.document_scanner),
+                     SizedBox(
+                        width: 64, 
+                        height: 74,
+                        child: Material(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(12)
                           ),
+                        color: Color.fromARGB(86, 174, 250, 176),
+                          child: InkWell(
+                            splashColor: Colors.red,
+                            onTap:null, 
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children:<Widget>[
+                                Icon(
+                                  Icons.document_scanner,
+                                  color: Colors.green,
+                                  ),
+                                Text('Docs', 
+                                 style:TextStyle(
+                                 fontSize: 12,
+                                  color: Colors.black,
+                                  fontWeight:FontWeight.normal 
+                                 ) ,
+                                )
+                              ],
+                            ),
                           ),
-                          Container(
-                            width: 32,
-                            height: 18,
-                            child:const Text('Docs')
+                        ),
+                    ),
+                     SizedBox(
+                        width: 64, 
+                        height: 74,
+                        child: Material(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(12)
                           ),
-
-
-
-
-
-
+                        color: Color.fromARGB(86, 168, 224, 250),
+                          child: InkWell(
+                            splashColor: Colors.red,
+                            onTap:null, 
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children:<Widget>[
+                                Icon(
+                                  Icons.image,
+                                  color: Colors.lightBlue,
+                                  ),
+                                Text('Images', 
+                                 style:TextStyle(
+                                 fontSize: 12,
+                                  color: Colors.black,
+                                  fontWeight:FontWeight.normal 
+                                 ) ,
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                    ),
+                     SizedBox(
+                        width: 64, 
+                        height: 74,
+                        child: Material(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(12)
+                          ),
+                        color: Color.fromARGB(86, 247, 170, 164),
+                          child: InkWell(
+                            splashColor: Colors.red,
+                            onTap:null, 
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children:<Widget>[
+                                Icon(
+                                  Icons.video_collection,
+                                  color: Colors.red,
+                                  ),
+                                Text('Music', 
+                                 style:TextStyle(
+                                 fontSize: 12,
+                                  color: Colors.black,
+                                  fontWeight:FontWeight.normal 
+                                 ) ,
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                    ),
+                     SizedBox(
+                        width: 64, 
+                        height: 74,
+                        child: Material(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(12)
+                          ),
+                        color:Color.fromARGB(86, 248, 217, 170),
+                          child: InkWell(
+                            splashColor: Colors.red,
+                            onTap:null, 
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children:<Widget>[
+                                Icon(
+                                  Icons.music_note_rounded,
+                                  color: Colors.orange,
+                                  ),
+                                Text('Music', 
+                                 style:TextStyle(
+                                 fontSize: 12,
+                                  color: Colors.black,
+                                  fontWeight:FontWeight.normal 
+                                 ) ,
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                    ),
                   ],
                 )
-
               )
             ],
           ),
-          ),
-        );
+    );
   }
-
-
-
 } 

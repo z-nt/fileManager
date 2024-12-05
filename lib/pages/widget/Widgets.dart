@@ -150,7 +150,8 @@ const BodyPage ({super.key});
 @override
   Widget build(BuildContext context) {
     return Container(
-      width: 375,
+      width: 311,
+      height: 624,
       decoration: BoxDecoration(
         border: Border.all(
           width: 1,
@@ -159,26 +160,89 @@ const BodyPage ({super.key});
       ),
       child:const Column(
         children:<Widget>[
-
               SizedBox(
-                width: 58,
                 height:48 ,
-                child: Text(
-                "289 GB\nFree",
-                ),
+                child:Row(
+                  
+                  children:<Widget>[
+                    Column(
+                  
+                      children:<Widget> [
+                          SizedBox(
+                      width: 59,
+                      height: 24,
+                      child: Text(
+                        '289 GB',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontWeight:FontWeight.w900 
+                        ),
+                      ),
+                    ), 
+                       SizedBox(
+                      width: 59,
+                      height: 24,
+                      child: Text(
+                        'Free',
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 99, 98, 98),
+                          fontSize: 16,
+                          fontWeight:FontWeight.w500 
+                        ),
+                      ),
+                    )
+                      ],
+                    
+                  
+                    ),
+                  ],
+                )
               ),
+             
 
               PercentIndicator(),
-              
-              SizedBox(
-                width: 58,
+               SizedBox(
                 height:48 ,
-                child: Text(
-                  "785 GB\nused",
-                  ),
+                child:Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children:<Widget>[
+                    Column(
+                  
+                      children:<Widget> [
+                          SizedBox(
+                      width: 59,
+                      height: 24,
+                      child: Text(
+                        '785 GB',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontWeight:FontWeight.w900 
+                        ),
+                      ),
+                    ), 
+                       SizedBox(
+                      width: 59,
+                      height: 24,
+                      child: Text(
+                        'Used',
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 99, 98, 98),
+                          fontSize: 16,
+                          fontWeight:FontWeight.w500 
+                        ),
+                      ),
+                    )
+                      ],
+                    
+                  
+                    ),
+                  ],
+                )
               ),
-
-              Category(),
+             
+                Category(),
         ],
       ),
     );
