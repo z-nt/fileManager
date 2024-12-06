@@ -152,12 +152,7 @@ const BodyPage ({super.key});
     return Container(
       width: 311,
       height: 624,
-      decoration: BoxDecoration(
-        border: Border.all(
-          width: 1,
-          color: Colors.red,
-        )
-      ),
+     
       child:const Column(
         children:<Widget>[
               SizedBox(
@@ -243,6 +238,7 @@ const BodyPage ({super.key});
               ),
              
                 Category(),
+                Recent(),
         ],
       ),
     );
