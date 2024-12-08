@@ -42,3 +42,21 @@ android {
 flutter {
     source = "../.."
 }
+signingConfigs {
+    release {
+        if (project.hasProperty('MY_KEYSTORE_PASSWORD')) {
+            storeFile file("/path/to/my-release-key.keystore")
+            storePassword "keystore_password"
+            keyAlias "my-key"
+            keyPassword "key_password"
+        }
+    }
+}
+
+buildTypes {
+    release {
+        signingConfig signingConfigs.release
+        minifyEnabled true
+        shrinkResources true
+    }
+}

@@ -8,7 +8,7 @@ import 'package:go_router/go_router.dart';
 ///create router for pages ;
 GoRouter goRouter(){
     return GoRouter(
-        initialLocation: '/home',
+        initialLocation: '/files',
         routes: <RouteBase> [
 
           GoRoute(

@@ -28,7 +28,6 @@ class PercentIndicator extends StatelessWidget {
 }
 
 ///List of Category Items 
-
 class Category extends StatelessWidget  {
   const Category ({super.key});
   @override
@@ -183,23 +182,17 @@ class Category extends StatelessWidget  {
     );
   }
 } 
-
-
 /// Recent section 
 class Recent extends StatelessWidget {
-  const Recent({super.key});
-
+const Recent({super.key});
 @override
   Widget build(BuildContext context) {
       return Container(
           width: 311,
           height: 118,
-          
-
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
                 children:<Widget> [
-              
                   const Row(
                     children:<Widget> [
                       Padding(
@@ -217,11 +210,9 @@ class Recent extends StatelessWidget {
                     ],
                   ),
                     SizedBox(
-                       
                       height: 68,
                       child: Row(
                         children:<Widget> [
-                          
                           SizedBox(
                             child: Container(
                               width: 306,
@@ -242,25 +233,29 @@ class Recent extends StatelessWidget {
                                 ]
                               ),
                               child:const Row(
+
+
                                 children:<Widget> [
                                 
+
+
                                   SizedBox( 
                                     width: 64,
                                     height: 52,
                                     child:
                                     Padding(
-                                      padding: const EdgeInsets.only(left: 8),
+                                      padding:  EdgeInsets.only(left: 8),
                                       child: SizedBox(
                                                   width: 52,
                                                   height: 52,
                                                   child: Material(
-                                                    borderRadius:const BorderRadius.all(
+                                                    borderRadius: BorderRadius.all(
                                                       Radius.circular(16)
                                                     ),
-                                                    color: const Color.fromARGB(255, 42, 170, 40), // button color
+                                                     color:  Color.fromARGB(255, 42, 170, 40), // button color
                                                     child: InkWell(
                                                       onTap: null, // button pressed
-                                                      child:const Column(
+                                                      child: Column(
                                                         mainAxisAlignment: MainAxisAlignment.center,
                                                         children: <Widget>[
                                                           Icon(
@@ -275,13 +270,15 @@ class Recent extends StatelessWidget {
                                         ),
                                     ),
                                   ), 
+
+
+
                                    SizedBox(
                                     width:154,
                                     height: 40, 
                                     child: Column( 
                                       mainAxisAlignment: MainAxisAlignment.center,
                                       children: <Widget>[ 
-                                        
                                         Text( 
                                           "Competitive Analysis. xls" , 
                                           style: TextStyle( 
@@ -298,20 +295,9 @@ class Recent extends StatelessWidget {
                                             fontWeight: FontWeight.w500
                                           ),
                                         ),
-
-
-
-
-
                                       ],
                                     ),
-                                  )
-
-
-
-
-
-
+                                  ), 
                                 ],
                               ),
                             )
